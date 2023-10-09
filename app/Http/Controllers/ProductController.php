@@ -6,6 +6,7 @@ use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -36,7 +37,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $suppliers = Supplier::all();
+        return view('products.create', compact('suppliers'));
     }
 
     /**
@@ -56,6 +58,7 @@ class ProductController extends Controller
         $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
+            'supplier' => $request->supplier,
             'image' => $image_path,
             'barcode' => $request->barcode,
             'price' => $request->price,
@@ -88,7 +91,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit')->with('product', $product);
+        $suppliers = Supplier::all();
+        return view('products.edit')->with(['product' => $product, 'suppliers' => $suppliers]);
     }
 
     /**

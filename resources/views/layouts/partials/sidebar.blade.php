@@ -35,6 +35,30 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
+                    <a href="{{ route('suppliers.index') }}" class="nav-link {{ activeSegment('suppliers') }}">
+                        <i class="nav-icon fas fa-boxes-packing"></i>
+                        <p>Suppliers</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{ route('suppliers.index') }}" class="nav-link {{ activeSegment('purchases') }}">
+                        <i class="nav-icon fas fa-shopping-bag"></i>
+                        <p>Purchases</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{ route('suppliers.index') }}" class="nav-link {{ activeSegment('shipments') }}">
+                        <i class="nav-icon fas fa-shipping-fast"></i>
+                        <p>Shipments</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{ route('suppliers.index') }}" class="nav-link {{ activeSegment('expenditures') }}">
+                        <i class="nav-icon fas fa-money-check-alt"></i>
+                        <p>Expenditures</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="{{ route('cart.index') }}" class="nav-link {{ activeSegment('cart') }}">
                         <i class="nav-icon fas fa-cart-plus"></i>
                         <p>Open POS</p>
@@ -42,8 +66,8 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="{{ route('orders.index') }}" class="nav-link {{ activeSegment('orders') }}">
-                        <i class="nav-icon fas fa-cart-plus"></i>
-                        <p>Orders</p>
+                        <i class="nav-icon fas fa-dollar-sign"></i>
+                        <p>Sales</p>
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
